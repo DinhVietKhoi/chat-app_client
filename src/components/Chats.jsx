@@ -279,8 +279,6 @@ const Container = styled.div`
             border: .1rem solid #f3e0f1;
             padding:.5rem;
             border-radius: 0.5rem;
-            height: 100%;
-
             .no-requests{
                 text-align: center;
                 font-size: 1.2rem;
