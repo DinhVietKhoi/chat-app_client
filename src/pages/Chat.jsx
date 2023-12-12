@@ -10,6 +10,8 @@ import Content from "../components/Content.jsx";
 import io from 'socket.io-client'
 import server from "../utils/URLserver.jsx";
 import { ToastContainer, toast } from 'react-toastify';
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
+import { MdOutlineZoomInMap, MdOutlineZoomOutMap } from "react-icons/md";
 
 function Chat() {
   const [mode, setMode] = useState(false)
@@ -223,9 +225,21 @@ function Chat() {
     setListFriend(newListUser)
 
   }, [newListUser])
+  const handle = useFullScreenHandle();
+
   return (
+    <FullScreen handle={handle}>
+
     <Container>
       <ToastContainer />
+      <div className="screen" >
+          
+          {
+            handle.active ?
+              <MdOutlineZoomInMap onClick={handle.exit} /> :
+              <MdOutlineZoomOutMap onClick={handle.enter}/>
+          }
+      </div>
       {
       isLoading&&<div className="container">
           <Navbar
@@ -264,7 +278,9 @@ function Chat() {
           ></Message>
         </div>
       }
-    </Container>
+      </Container>
+      </FullScreen>
+      
   )
 }
 
@@ -274,6 +290,20 @@ const Container = styled.div`
   /* background-color: #6c4666; */
   /* align-items: center; */
   /* justify-content: center; */
+  .screen{
+      position: fixed;
+      top:0rem;
+      right:0rem;
+      cursor: pointer;
+      z-index: 100000;
+      color: red;
+      svg{
+        font-size: 2rem;
+      }
+      &:hover{
+        opacity: 1;
+      }
+    }
   &>.container{
     /* background-color: #4d0243; */
     width: 100vw;
@@ -282,6 +312,7 @@ const Container = styled.div`
     /* justify-content: center; */
     /* align-items: center; */
     border-radius: 1rem;
+   
     @media screen and (max-width:990px){
       flex-direction: column;
     }
