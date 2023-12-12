@@ -35,8 +35,9 @@ body,button,input,ul,li,a{
 input{
     background-color: transparent !important;
 }
-body{
-    max-height: 100vh;
-    max-width: 100vw;
+body, html, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
 }

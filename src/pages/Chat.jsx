@@ -149,10 +149,12 @@ function Chat() {
       if (currentUser._id !== newMsg.sender._id) {
         if (userSelected == undefined) {
           toast.info(`Có tin nhắn mới từ -${newMsg.sender.fullname}-`, toastOption);
+          console.log(1)
         }
         else if (userSelected._id !== 'group') {
           if(userSelected._id !== newMsg.sender._id ){
             toast.info(`Có tin nhắn mới từ -${newMsg.sender.fullname}-`, toastOption);
+          console.log(2)
           }
         }
         setNewMsg(undefined)
