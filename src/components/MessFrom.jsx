@@ -37,12 +37,10 @@ const Container = styled.div`
         display: flex;
         flex-direction: row;
         gap: 1rem;
-        width: 100%;
         .content{
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            flex:1;
             .text{
                 display: flex;
                 flex-direction: column;
@@ -98,6 +96,14 @@ const Container = styled.div`
                     border: .1rem solid #ec68d8;
                 }
             }
+    }
+    @media screen and (max-width:990px){
+        &>.container{
+            width: 100% !important;
+            .content{
+                flex:1;
+            }
+        }
     }
     @media screen and (max-width:300px){
         .time{

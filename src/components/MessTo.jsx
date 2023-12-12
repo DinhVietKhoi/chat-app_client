@@ -43,7 +43,6 @@ const Container = styled.div`
         display: flex;
         flex-direction: row;
         gap: 1rem;
-        width: 100%;
         &.true{
             & .text{
                 background-color: #36404A !important;
@@ -62,7 +61,6 @@ const Container = styled.div`
         .content{
             display: flex;
             flex-direction: column;
-            flex:1;
             overflow: hidden;
             .text{
                 display: flex;
@@ -116,6 +114,14 @@ const Container = styled.div`
                     border: .1rem solid #ec68d8;
                 }
             }
+    }
+    @media screen and (max-width:990px){
+        &>.container{
+            width: 100% !important;
+            .content{
+                flex:1;
+            }
+        }
     }
     @media screen and (max-width:300px){
         .time{
