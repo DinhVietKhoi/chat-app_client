@@ -11,7 +11,7 @@ function Login() {
   const navigate = useNavigate()
     
   const [isLoading,setIsLoading] = useState(false)
-
+  const [isSubmit,setIsSubmit] = useState(false)
   const [values, setValues] = useState({
     username: "",
     password: "",
@@ -48,6 +48,7 @@ function Login() {
     }
   }
   const handleSubmit = async (e) => {
+    setIsSubmit(true)
     e.preventDefault()
     if (handleValidation()) {
       const { username, password } = values;
@@ -56,15 +57,20 @@ function Login() {
         if (res.data.status) {
           localStorage.setItem("chat-app-user", JSON.stringify(res.data.user))
           navigate('/')        
+
         }
         else {
           toast.error(res.data.msg, toastOption)
         }
+        setIsSubmit(false)
       }
       catch (err) {
         toast.error("Server hiện đang tạm dừng.", toastOption)
+        setIsSubmit(false)
       }
-      
+    }
+    else {
+      setIsSubmit(false)
     }
   }
   useEffect(() => {
@@ -108,7 +114,7 @@ function Login() {
               placeholder='Password'
               onChange={(e) => handleChange(e)}
             ></input>
-            <button type="submit">Login</button>
+            <button type="submit" className={`${isSubmit}`}>Login</button>
             <span>
               Don't have an account ? <Link to='/register'>Register</Link>
             </span>
@@ -180,6 +186,9 @@ const FromContainer = styled.div`
       border-radius: .5rem;
       transition: .125s linear;
       color: #ec68d8;
+      &.true{
+        pointer-events: none;
+      }
       &:hover{
         color:#ffffff;
         background-color: #ec68d8;

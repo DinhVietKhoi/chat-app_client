@@ -98,6 +98,8 @@ const Container = styled.div`
     @media screen and (max-width: 990px){
         flex:1;
         overflow:hidden;
+        padding-bottom: 7rem;
+        background-color: red !important;
         .content-container{
             max-width: 100vw;
             min-width: 100vw;

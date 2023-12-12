@@ -460,6 +460,7 @@ const Container = styled.div`
         top:0;
         right:-100%;
         transition: all .125s ease;
+        z-index: 2000;
         .not-data{
             position: fixed;
             z-index: 2000;

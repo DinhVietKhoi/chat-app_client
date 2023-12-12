@@ -73,8 +73,8 @@ function InputMessage({ handleAddMsg, mode }) {
                                 }
                             }
                             size={20}
-                            width='100%'
                             height={300}
+                            className='emoji1'
                         ></EmojiPicker>
                     </div>
                 </div>
@@ -147,6 +147,16 @@ const Container = styled.div`
             img{
                 width:1.6rem;
             }
+        }
+    }
+    @media screen and (max-width: 400px){
+        .emoji-box{
+            position: fixed !important;
+            left:0;
+            width: 100vw;
+            display: flex;
+            padding: 0 1rem;
+            bottom:6rem !important;
         }
     }
 `

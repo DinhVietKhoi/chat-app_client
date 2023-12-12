@@ -373,9 +373,13 @@ const Container = styled.div`
         
     }
     @media screen and (max-width: 990px) {
-        order:1;
+        /* order:1; */
+        position: fixed;
+        bottom:0;
+        left:0;
+        z-index: 1000;
         .container{
-            height: auto;
+            height: 7rem;
             width: 100vw;
             flex-direction: row;
             padding: 1rem ;
@@ -414,6 +418,11 @@ const Container = styled.div`
                     .box-setting{
                         left:-250%;
                     }
+                }
+            }
+            .logo{
+                img{
+                    height: 6rem;
                 }
             }
         }

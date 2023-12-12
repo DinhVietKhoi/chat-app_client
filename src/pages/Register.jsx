@@ -9,6 +9,7 @@ import { registerRouter, loginRouter } from '../utils/APIRouter';
 function Register() {
   const navigate = useNavigate()
   const [isLoading,setIsLoading] = useState(false)
+  const [isSubmit,setIsSubmit] = useState(false)
 
   const [values, setValues] = useState({
     username: "",
@@ -56,6 +57,7 @@ function Register() {
     }
   }
   const handleSubmit = async (e) => {
+    setIsSubmit(true)
     e.preventDefault()
     if (handleValidation()) {
       const { username, password, email } = values;
@@ -68,11 +70,15 @@ function Register() {
         else {
           toast.error(res.data.msg, toastOption)
         }
+        setIsSubmit(false)
       }
       catch(err) {
         toast.error("Server hiện đang tạm dừng.", toastOption)
+        setIsSubmit(false)
       }
-      
+    }
+    else {
+      setIsSubmit(false)
     }
   }
   useEffect(() => {
@@ -134,7 +140,7 @@ function Register() {
           placeholder='Confirm Password'
           onChange={(e) => handleChange(e)}
         ></input>
-        <button type="submit"> Create User</button>
+        <button type="submit" className={`${isSubmit}`}> Create User</button>
         <span>
           Already have an account ? <Link to='/login'>Login</Link>
         </span>
@@ -207,6 +213,9 @@ const FromContainer = styled.div`
       border-radius: .5rem;
       transition: .125s linear;
       color: #ec68d8;
+      &.true{
+        pointer-events: none;
+      }
       &:hover{
         color:#ffffff;
         background-color: #ec68d8;
