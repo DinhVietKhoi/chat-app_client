@@ -101,10 +101,10 @@ const Container = styled.div`
         flex:1;
         overflow:hidden;
         padding-bottom: 7rem;
-        background-color: red !important;
         min-width: 100vw;
         .content-container{
             max-width: 100vw;
+            width: 100vw;
             height: 100%;
         }
     }
