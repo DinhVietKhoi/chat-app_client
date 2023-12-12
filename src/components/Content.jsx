@@ -84,6 +84,7 @@ function Content(
 const Container = styled.div`
     max-height: 100vh;
     min-width: 38rem;
+    height: 100vh;
     width: 38rem;
     .content-container{
         width: 100%;

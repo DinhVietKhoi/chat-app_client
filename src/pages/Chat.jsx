@@ -150,8 +150,10 @@ function Chat() {
         if (userSelected == undefined) {
           toast.info(`Có tin nhắn mới từ -${newMsg.sender.fullname}-`, toastOption);
         }
-        else if(userSelected._id !== newMsg.sender._id ){
-          toast.info(`Có tin nhắn mới từ -${newMsg.sender.fullname}-`, toastOption);
+        else if (userSelected._id !== 'group') {
+          if(userSelected._id !== newMsg.sender._id ){
+            toast.info(`Có tin nhắn mới từ -${newMsg.sender.fullname}-`, toastOption);
+          }
         }
         setNewMsg(undefined)
       }
