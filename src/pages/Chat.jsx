@@ -146,18 +146,21 @@ function Chat() {
   }
   useEffect(() => {
     if (newMsg && currentUser) {
-      if (currentUser._id !== newMsg.sender._id) {
-        if (userSelected == undefined) {
-          toast.info(`Có tin nhắn mới từ -${newMsg.sender.fullname}-`, toastOption);
-          console.log(1)
-        }
-        else if (userSelected._id !== 'group') {
-          if(userSelected._id !== newMsg.sender._id ){
+      if (newMsg.sender._id !== newMsg.receiver._id) {
+        if (currentUser._id !== newMsg.sender._id) {
+          if (userSelected == undefined) {
             toast.info(`Có tin nhắn mới từ -${newMsg.sender.fullname}-`, toastOption);
-          console.log(2)
           }
+          else if (userSelected !== 'group') {
+            if(userSelected._id !== newMsg.sender._id ){
+              toast.info(`Có tin nhắn mới từ -${newMsg.sender.fullname}-`, toastOption);
+            }
+          }
+          setNewMsg(undefined)
         }
-        setNewMsg(undefined)
+        else {
+          setNewMsg(undefined)
+        }
       }
       else {
         setNewMsg(undefined)

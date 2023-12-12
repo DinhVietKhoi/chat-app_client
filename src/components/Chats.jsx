@@ -221,6 +221,7 @@ const Container = styled.div`
         flex-direction: column;
         overflow: hidden;
         gap:2rem;
+        
         .recent{
             display: flex;
             flex-direction: column;
@@ -229,6 +230,8 @@ const Container = styled.div`
             padding:.5rem;
             overflow: hidden;
             flex:1;
+            height: 100%;
+
             h3{
                 font-weight: 500;
                 font-size: 1.5rem;
@@ -249,7 +252,7 @@ const Container = styled.div`
             }
             &-list{
                 flex:1;
-                max-height: 100%;
+                height: 100%;
                 display: flex;
                 /* align-items: center; */
                 flex-direction: column;
@@ -276,6 +279,8 @@ const Container = styled.div`
             border: .1rem solid #f3e0f1;
             padding:.5rem;
             border-radius: 0.5rem;
+            height: 100%;
+
             .no-requests{
                 text-align: center;
                 font-size: 1.2rem;
@@ -331,6 +336,7 @@ const Container = styled.div`
                 gap:1rem;
                 padding-right: 1rem;
                 overflow-y: scroll;
+                height: 100%;
                 &::-webkit-scrollbar{
                     width: .4rem;
                     &-thumb{
