@@ -82,11 +82,13 @@ function Content(
     )
 }
 const Container = styled.div`
+    max-height: 100vh;
+    min-width: 38rem;
+    width: 38rem;
     .content-container{
-        min-width: 38rem;
-        max-width: 38rem;
+        width: 100%;
         background-color:#F5F7FB ;
-        height: 100vh;
+        height: 100%;
         padding:2rem;
         overflow: hidden;
         box-shadow: .1rem .2rem rgba(236, 104, 216,.4);
@@ -100,9 +102,9 @@ const Container = styled.div`
         overflow:hidden;
         padding-bottom: 7rem;
         background-color: red !important;
+        min-width: 100vw;
         .content-container{
             max-width: 100vw;
-            min-width: 100vw;
             height: 100%;
         }
     }
