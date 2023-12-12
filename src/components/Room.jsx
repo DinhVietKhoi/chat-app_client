@@ -233,5 +233,33 @@ const Container = styled.div`
             }
         }
     }
+    @media screen and (max-width:400px) {
+        .title{
+            &-group{
+                width: 100%;
+                svg{
+                    display: none;
+                }
+                p{
+                    svg{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width:320px) {
+        .title{
+            &-group{
+                h3{
+                    max-width: 50% !important;
+                    width: 50% !important;
+                    white-space: nowrap !important; 
+                    overflow: hidden !important;    
+                    text-overflow: ellipsis !important;
+                }
+            }
+        }
+    }
 `
 export default Room

@@ -332,6 +332,7 @@ const Container = styled.div`
                 display: flex;
                 align-items: center;
                 gap:1rem;
+                overflow: hidden;
                 img{
                     width: 4rem;
                     height: 4rem;
@@ -345,7 +346,7 @@ const Container = styled.div`
                     color:#ec68d8;
                 }
                 .dot{
-                    width: .8rem;
+                    width: .8rem !important;
                     height: .8rem;
                     border-radius: 50%;
                     &.true{
@@ -482,6 +483,19 @@ const Container = styled.div`
         }
         .overlay{
             display: none;
+        }
+    }
+    @media screen and (max-width:400px) {
+        &>.container{
+            .info{
+                span{
+                    max-width: 50% !important;
+                    width: 50% !important;
+                    white-space: nowrap !important; 
+                    overflow: hidden !important;    
+                    text-overflow: ellipsis !important;
+                }
+            }
         }
     }
 `

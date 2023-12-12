@@ -296,7 +296,7 @@ const Container = styled.div`
             gap:.5rem;
             align-items: center;
             position: absolute;
-            top:5.5rem;
+            top:3.5rem;
             right:1.5rem;
             padding:1rem;
             border-radius: .5rem;
@@ -384,6 +384,7 @@ const Container = styled.div`
                     display: flex;
                     display: flex;
                     align-items: center;
+                    overflow: hidden;
                     svg{
                         margin-right: 1rem;
                     }
@@ -397,6 +398,13 @@ const Container = styled.div`
                         }
                     }
                 }
+            }
+            h3{
+                max-width: 100% !important;
+                width: 100% !important;
+                white-space: nowrap !important; 
+                overflow: hidden !important;    
+                text-overflow: ellipsis !important;
             }
         }
     }

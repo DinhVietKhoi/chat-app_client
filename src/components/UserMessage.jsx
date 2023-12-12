@@ -91,6 +91,8 @@ const Container = styled.div`
         .body-box{
             display: flex;
             gap: 1rem;
+            flex:1;
+            width: 100%;
         }
         .avatar{
             position: relative;
@@ -117,7 +119,6 @@ const Container = styled.div`
             }
         }
         .content{
-            
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -142,6 +143,7 @@ const Container = styled.div`
             justify-content: space-around;
             color:#939498;
             font-size: 1.2rem;
+            padding-left: auto;
         }
     }
     @keyframes showComponent{
@@ -152,6 +154,21 @@ const Container = styled.div`
         100%{
             opacity: 1;
             visibility: visible;
+        }
+    }
+    @media screen and (max-width:400px) {
+        
+        .time{
+            display: none !important;
+        }
+    }
+    @media screen and (max-width:320px) {
+        .name,.mess{
+            max-width: 100% !important;
+            width: 100% !important;
+            white-space: nowrap !important; 
+            overflow: hidden !important;    
+            text-overflow: ellipsis !important;
         }
     }
 `

@@ -291,6 +291,11 @@ const Container = styled.div`
             h3{
                 font-weight: 500;
                 font-size: 1.5rem;
+                max-width: 100% !important;
+                width: 100% !important;
+                white-space: nowrap !important; 
+                overflow: hidden !important;    
+                text-overflow: ellipsis !important;
             }
             &-header{
                 padding:1rem;
@@ -298,6 +303,7 @@ const Container = styled.div`
                 align-items: center;
                 cursor: pointer;
                 justify-content: space-between;
+                gap: 1rem;
                 h3{
                     display: flex;
                     align-items: center;
@@ -316,6 +322,7 @@ const Container = styled.div`
             .gr{
                 display:flex;
                 align-items: center;
+                overflow: hidden;
             }
             &-list{
                 display: flex;
@@ -334,6 +341,13 @@ const Container = styled.div`
                         }
                     }
                 }
+            }
+        }
+    }
+    @media screen and (max-width:320px) {
+        .pending-header{
+            svg{
+                display: none;
             }
         }
     }

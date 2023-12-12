@@ -25,7 +25,7 @@ return (
             <div className='content'>
                 <div className='text'>
                     <p>{mess.message.text}</p>
-                    <span className='time'><FaRegClock />{formattedTime}</span>
+                    <div className='time'><FaRegClock /><span>{formattedTime}</span></div>
                 </div>
                 <span className='name'>{mess.sender.fullname}</span>
             </div>
@@ -43,6 +43,7 @@ const Container = styled.div`
         display: flex;
         flex-direction: row;
         gap: 1rem;
+        width: 100%;
         &.true{
             & .text{
                 background-color: #36404A !important;
@@ -61,6 +62,8 @@ const Container = styled.div`
         .content{
             display: flex;
             flex-direction: column;
+            flex:1;
+            overflow: hidden;
             .text{
                 display: flex;
                 flex-direction: column;
@@ -72,6 +75,9 @@ const Container = styled.div`
                 font-weight: 500;
                 position: relative;
                 margin-bottom: 2rem;
+                p{
+                    word-wrap: break-word;
+                }
                 &::after{
                     content: '';
                     position: absolute;
@@ -110,6 +116,18 @@ const Container = styled.div`
                     border: .1rem solid #ec68d8;
                 }
             }
+    }
+    @media screen and (max-width:300px){
+        .time{
+            svg{
+                display: none;
+            }
+        }
+    }
+    @media screen and (max-width:250px){
+        .time{
+            display: none !important;
+        }
     }
 `
 export default MessTo
